@@ -7,17 +7,17 @@ Grid::Grid(int height, int width) : height{ height }, width{ width } {
 	score = 0;
 }
 
-Grid::~Grid() {}
+bool Grid::check(const Coord &i, const unsigned int blockNum) const {
+	if (i.x < 0 || i.y < 0) { return false; }
+	if (i.x >= height || i.y >= width) { return false; }
+	if (view[i.x][i.y].val != ' ' && view[i.x][i.y].blockNum != blockNum) { return false; }
+	return true;
+}
 
-bool Grid::update(const std::vector<Coord> &coords, const char value, const int blockNum) {
+void Grid::update(const std::vector<Coord> &coords, const char value, const int blockNum) {
 	for (const Coord &i : coords) {
-		if (i.x < 0 || i.y < 0) { return false; }
-		if (i.x >= height || i.y >= width) { return false; }
-		if (view[i.x][i.y].val != ' ' && view[i.x][i.y].blockNum != blockNum) { return false; }
-
 		view[i.x][i.y].val = value; view[i.x][i.y].blockNum = blockNum;
 	}
-	return true;
 }
 
 void Grid::print() const {

@@ -5,14 +5,15 @@
 
 class Grid {
 public:
-	Grid(int height, int width);
-	~Grid();
 
-	bool update(const std::vector<Coord> &coords, const char value, const int blockNum);
+	Grid(int height, int width); // Constructor
+	//~Grid();
 
-	bool checkforRow();
+	void update(const std::vector<Coord> &coords, const char value, const int blockNum); // Updates the grid when block is moved
+	bool check(const Coord &i, const unsigned int blockNum) const;
+	bool checkforRow(); // Checks if we have filled a row
 
-	void print() const;
+	void print() const; // Prints grid after every command
 
 private:
 	std::vector<std::vector<BlockCoord> > view;
