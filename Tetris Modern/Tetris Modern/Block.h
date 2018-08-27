@@ -17,10 +17,11 @@ public:
 	virtual ~Block();
 
 protected:
-	Block(unsigned int value, const Grid &g);
+	Block(unsigned int value, Grid &g);
 
 private:
 	std::vector<Coord> coords; // The x,y pairs that the block occupies
 	unsigned int number; // Which block is it
-	const Grid &g;
+	char letter;
+	Grid &g;
 };

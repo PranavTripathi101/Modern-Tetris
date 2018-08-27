@@ -10,13 +10,13 @@ public:
 	//~Grid();
 
 	void update(const std::vector<Coord> &coords, const char value, const int blockNum); // Updates the grid when block is moved
-	bool check(const Coord &i, const unsigned int blockNum) const;
+	bool check(const std::vector<Coord> &i, const unsigned int blockNum) const;
 	bool checkforRow(); // Checks if we have filled a row
 
 	void print() const; // Prints grid after every command
 
 private:
-	std::vector<std::vector<BlockCoord> > view;
+	std::vector<std::vector<BlockCoord> > view; // (0,0) is top left, (9,14) is bottom right
 	int score;
 	int height, width;
 };
