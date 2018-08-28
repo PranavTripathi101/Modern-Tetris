@@ -1,7 +1,7 @@
 #include "Block.h"
 #include <algorithm>
 #include <iostream>
-Block::Block(unsigned int value, Grid &g) : number{ value }, g{ g } {}
+Block::Block(unsigned int value, Grid &g, char letter, const std::vector<Coord> &coords) : number{ value }, g{ g }, letter{ letter }, coords{ coords } {}
 
 Block::~Block() {}
 

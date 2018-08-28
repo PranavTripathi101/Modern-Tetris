@@ -17,7 +17,7 @@ public:
 	virtual ~Block();
 
 protected:
-	Block(unsigned int value, Grid &g);
+	Block(unsigned int value, Grid &g, char letter, const std::vector<Coord> &coords);
 	unsigned int number; // Which block is it
 	Grid &g;
 	std::vector<Coord> coords; // The x,y pairs that the block occupies
