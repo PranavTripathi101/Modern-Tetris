@@ -6,8 +6,4 @@ class IBlock : public Block {
 public:
 	IBlock(unsigned int value, Grid &g);
 
-
-private:
-	std::vector<Coord> coords;
-	char letter;
 };
