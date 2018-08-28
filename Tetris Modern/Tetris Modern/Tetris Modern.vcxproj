@@ -119,10 +119,12 @@
     <ClInclude Include="BlockCoord.h" />
     <ClInclude Include="Coord.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="IBlock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="IBlock.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Grid.h"
+#include "Block.h"
+#include "IBlock.h"
 
 namespace Solution {
 
@@ -10,8 +12,16 @@ namespace Solution {
 
 int main() {
 	Grid g(Solution::height, Solution::width);
-	g.print();
+	//g.print();
 
+	IBlock i(1, g);
+	i.move(Block::Movement::Down);
+	i.move(Block::Movement::Down);
+	i.move(Block::Movement::Down);
+	i.move(Block::Movement::Down);
+	i.move(Block::Movement::Down);
+	i.move(Block::Movement::Down);
+	//g.print();
 	std::cin.get();
 
 }

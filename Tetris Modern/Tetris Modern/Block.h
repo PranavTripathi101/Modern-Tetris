@@ -18,10 +18,9 @@ public:
 
 protected:
 	Block(unsigned int value, Grid &g);
-
-private:
-	std::vector<Coord> coords; // The x,y pairs that the block occupies
 	unsigned int number; // Which block is it
-	char letter;
 	Grid &g;
+	std::vector<Coord> coords; // The x,y pairs that the block occupies
+	char letter;
+
 };

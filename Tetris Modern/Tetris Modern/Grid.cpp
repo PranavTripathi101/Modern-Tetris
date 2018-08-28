@@ -10,7 +10,7 @@ Grid::Grid(int height, int width) : height{ height }, width{ width } {
 bool Grid::check(const std::vector<Coord> &coords, const unsigned int blockNum) const {
 	for (const Coord &i : coords) {
 		if (i.x < 0 || i.y < 0) { return false; }
-		if (i.x >= height || i.y >= width) { return false; }
+		if (i.x >= width || i.y >= height) { return false; }
 		if (view[i.x][i.y].val != ' ' && view[i.x][i.y].blockNum != blockNum) { return false; }
 	}
 	return true;
