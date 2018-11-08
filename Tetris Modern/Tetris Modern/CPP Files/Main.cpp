@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <memory>
 #include "../Header Files/Grid.h"
 #include "../Header Files/Block.h"
 #include "../Header Files/IBlock.h"
@@ -9,20 +11,33 @@ namespace Solution {
 	constexpr static int height = 15;
 }
 
+std::unique_ptr<Block> getNextBlock(int count, Grid &g) {
+	if (count % 2 == 0) { return std::make_unique<OBlock>(count, g); }
+	else { return std::make_unique<IBlock>(count, g);
+	}
+}
 
 int main() {
 	Grid g(Solution::height, Solution::width);
 	//g.print();
+	std::string input;
+	int count = 1;
 
-	OBlock i(1, g);
+	std::unique_ptr<Block> block = std::make_unique<OBlock>( count, g );
 	g.print();
-	i.drop();
-	OBlock o(2, g);
+	while (true) {
+		std::cin >> input;
+		if (input == "down") { block->down(); }
+		else if (input == "left") { block->left(); }
+		else if (input == "right") { block->right(); }
+		else if (input == "drop") {
+			block->drop(); 
+			count++;
+			block = getNextBlock(count, g);
 
-	o.drop();
-	IBlock t(3, g);
-	t.drop();
-	g.print();
-	std::cin.get();
+		}
+
+		g.print();
+	}
 
 }
