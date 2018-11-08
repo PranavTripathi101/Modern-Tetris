@@ -1,4 +1,4 @@
-#include "Grid.h"
+#include "../Header Files/Grid.h"
 #include <vector>
 #include <iostream>
 

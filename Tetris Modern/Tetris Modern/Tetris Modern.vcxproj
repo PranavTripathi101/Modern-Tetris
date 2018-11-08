@@ -115,19 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Block.h" />
-    <ClInclude Include="BlockCoord.h" />
-    <ClInclude Include="Coord.h" />
-    <ClInclude Include="Grid.h" />
-    <ClInclude Include="IBlock.h" />
-    <ClInclude Include="OBlock.h" />
+    <ClCompile Include="CPP Files\Block.cpp" />
+    <ClCompile Include="CPP Files\Grid.cpp" />
+    <ClCompile Include="CPP Files\IBlock.cpp" />
+    <ClCompile Include="CPP Files\Main.cpp" />
+    <ClCompile Include="CPP Files\OBlock.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Block.cpp" />
-    <ClCompile Include="Grid.cpp" />
-    <ClCompile Include="IBlock.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="OBlock.cpp" />
+    <ClInclude Include="Header Files\Block.h" />
+    <ClInclude Include="Header Files\BlockCoord.h" />
+    <ClInclude Include="Header Files\Coord.h" />
+    <ClInclude Include="Header Files\Grid.h" />
+    <ClInclude Include="Header Files\IBlock.h" />
+    <ClInclude Include="Header Files\OBlock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

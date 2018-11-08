@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Grid.h"
-#include "Block.h"
-#include "IBlock.h"
-#include "OBlock.h"
+#include "../Header Files/Grid.h"
+#include "../Header Files/Block.h"
+#include "../Header Files/IBlock.h"
+#include "../Header Files/OBlock.h"
 namespace Solution {
 
 	constexpr static int width = 10;

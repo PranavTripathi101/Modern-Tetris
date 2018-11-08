@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "../Header Files/Block.h"
 #include <algorithm>
 #include <iostream>
 Block::Block(unsigned int value, Grid &g, char letter, const std::vector<Coord> &coords) : number{ value }, g{ g }, letter{ letter }, coords{ coords } {}
