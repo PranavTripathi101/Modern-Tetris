@@ -6,7 +6,7 @@
 class Grid {
 public:
 
-	Grid(int height, int width); // Constructor
+	Grid(int height, int width);
 	//~Grid();
 
 	void update(const std::vector<Coord> &coords, const char value, const int blockNum); // Updates the grid when block is moved
