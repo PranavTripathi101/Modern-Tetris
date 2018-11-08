@@ -11,15 +11,24 @@ bool Grid::check(const std::vector<Coord> &coords, const unsigned int blockNum) 
 	for (const Coord &i : coords) {
 		if (i.x < 0 || i.y < 0) { return false; }
 		if (i.x >= width || i.y >= height) { return false; }
-		if (view[i.x][i.y].val != ' ' && view[i.x][i.y].blockNum != blockNum) { return false; }
+		if (view[i.y][i.x].val != ' ' && view[i.y][i.x].blockNum != blockNum) { return false; }
 	}
 	return true;
 }
 
 void Grid::update(const std::vector<Coord> &coords, const char value, const int blockNum) {
 	for (const Coord &i : coords) {
-		view[i.x][i.y].val = value; view[i.x][i.y].blockNum = blockNum;
+		view[i.y][i.x].val = value; view[i.y][i.x].blockNum = blockNum;
 	}
+}
+
+int Grid::getLowestOpenSlot(int row, int column, int number){
+	int lowestRow = row + 1;
+	for (lowestRow; lowestRow < height; lowestRow++) {
+		if (view[lowestRow][column].blockNum == number) { continue; }
+		if (view[lowestRow][column].val != ' ') { break; }
+	}
+	return lowestRow - row;
 }
 
 void Grid::print() const {

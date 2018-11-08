@@ -7,12 +7,12 @@ class Grid {
 public:
 
 	Grid(int height, int width);
-	//~Grid();
 
 	void update(const std::vector<Coord> &coords, const char value, const int blockNum); // Updates the grid when block is moved
 	bool check(const std::vector<Coord> &i, const unsigned int blockNum) const;
 	bool checkforRow(); // Checks if we have filled a row
 
+	int getLowestOpenSlot(int row, int column, int number);
 	void print() const; // Prints grid after every command
 
 private:

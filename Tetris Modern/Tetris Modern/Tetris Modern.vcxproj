@@ -120,12 +120,14 @@
     <ClInclude Include="Coord.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="IBlock.h" />
+    <ClInclude Include="OBlock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="IBlock.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="OBlock.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

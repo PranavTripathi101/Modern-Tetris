@@ -12,6 +12,10 @@ public:
 		Right
 	};
 	void move(Movement m);
+	void down();
+	void left();
+	int maxDrop(Coord current);
+	void right();
 	void drop(); // Drops the block to bottom
 	virtual void rotate(); // Rotates the block clockwise
 	virtual ~Block();
@@ -22,5 +26,8 @@ protected:
 	Grid &g;
 	std::vector<Coord> coords; // The x,y pairs that the block occupies
 	char letter;
+
+private:
+	void down(int val);
 
 };

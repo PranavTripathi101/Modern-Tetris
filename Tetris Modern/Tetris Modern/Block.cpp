@@ -5,32 +5,61 @@ Block::Block(unsigned int value, Grid &g, char letter, const std::vector<Coord> 
 
 Block::~Block() {}
 
-void Block::move(Movement m) {
+
+void Block::down() {
 	std::vector<Coord> temp;
-
-	// Current issue is that coords is empty. Something wrong with my OO design. Will need to fix.
-
 	for (auto i : coords) {
-		if (m == Movement::Down) {
-			temp.push_back({ i.x + 1, i.y });
-		}
-		else if (m == Movement::Left) {
-			temp.push_back({ i.x, i.y - 1 });
-		}
-		else if (m == Movement::Right) {
-			temp.push_back({ i.x, i.y + 1});
-		}
+		temp.push_back({ i.x, i.y + 1 });
 	}
 	if (!g.check(temp, number)) { return; }
 	g.update(coords, ' ', 0);
 	g.update(temp, letter, number);
-	
+
 	coords = std::move(temp);
-	
+}
+
+void Block::down(int val) {
+	for (int i = 0; i < val; i++) {
+		down();
+	}
+}
+
+void Block::right() {
+	std::vector<Coord> temp;
+	for (auto i : coords) {
+		temp.push_back({ i.x + 1, i.y });
+	}
+	if (!g.check(temp, number)) { return; }
+	g.update(coords, ' ', 0);
+	g.update(temp, letter, number);
+
+	coords = std::move(temp);
+}
+
+void Block::left() {
+	std::vector<Coord> temp;
+	for (auto i : coords) {
+		temp.push_back({ i.x - 1, i.y });
+	}
+	if (!g.check(temp, number)) { return; }
+	g.update(coords, ' ', 0);
+	g.update(temp, letter, number);
+
+	coords = std::move(temp);
+}
+
+int Block::maxDrop(Coord current) {
+	return g.getLowestOpenSlot(current.y, current.x, number);
 }
 
 void Block::drop() {
-
+	int maxDown = INT_MAX;
+	for (auto i : coords) {
+		 maxDown = std::min(maxDown, maxDrop(i));
+	}
+	down(maxDown);
 }
+
+
 
 void Block::rotate() {}

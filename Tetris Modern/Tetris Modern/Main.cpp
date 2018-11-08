@@ -2,7 +2,7 @@
 #include "Grid.h"
 #include "Block.h"
 #include "IBlock.h"
-
+#include "OBlock.h"
 namespace Solution {
 
 	constexpr static int width = 10;
@@ -14,14 +14,14 @@ int main() {
 	Grid g(Solution::height, Solution::width);
 	//g.print();
 
-	IBlock i(1, g);
+	OBlock i(1, g);
 	g.print();
-	i.move(Block::Movement::Down);
-	i.move(Block::Movement::Down);
-	i.move(Block::Movement::Down);
-	i.move(Block::Movement::Down);
-	i.move(Block::Movement::Down);
-	i.move(Block::Movement::Down);
+	i.drop();
+	OBlock o(2, g);
+
+	o.drop();
+	IBlock t(3, g);
+	t.drop();
 	g.print();
 	std::cin.get();
 
