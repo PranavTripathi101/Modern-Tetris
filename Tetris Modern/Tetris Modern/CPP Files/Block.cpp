@@ -19,9 +19,15 @@ void Block::down() {
 }
 
 void Block::down(int val) {
-	for (int i = 0; i < val; i++) {
-		down();
+	std::vector<Coord> temp;
+	for (auto i : coords) {
+		temp.push_back({ i.x, i.y + val });
 	}
+	if (!g.check(temp, number)) { return; }
+	g.update(coords, ' ', 0);
+	g.update(temp, letter, number);
+
+	coords = std::move(temp);
 }
 
 void Block::right() {

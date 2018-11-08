@@ -28,7 +28,7 @@ int Grid::getLowestOpenSlot(int row, int column, int number){
 		if (view[lowestRow][column].blockNum == number) { continue; }
 		if (view[lowestRow][column].val != ' ') { break; }
 	}
-	return lowestRow - row;
+	return lowestRow - row - 1;
 }
 
 void Grid::print() const {
