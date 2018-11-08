@@ -27,9 +27,24 @@ int main() {
 	g.print();
 	while (true) {
 		std::cin >> input;
-		if (input == "down") { block->down(); }
-		else if (input == "left") { block->left(); }
-		else if (input == "right") { block->right(); }
+		if (input == "down") {
+			if (block->down()) {
+				count++;
+				block = getNextBlock(count, g);
+			}
+		}
+		else if (input == "left") {
+			if (block->left()) {
+				count++;
+				block = getNextBlock(count, g);
+			}
+		}
+		else if (input == "right") {
+			if (block->right()) {
+				count++;
+				block = getNextBlock(count, g);
+			}
+		}
 		else if (input == "drop") {
 			block->drop(); 
 			count++;

@@ -6,52 +6,56 @@ Block::Block(unsigned int value, Grid &g, char letter, const std::vector<Coord> 
 Block::~Block() {}
 
 
-void Block::down() {
+int Block::down() {
 	std::vector<Coord> temp;
 	for (auto i : coords) {
 		temp.push_back({ i.x, i.y + 1 });
 	}
-	if (!g.check(temp, number)) { return; }
+	if (!g.check(temp, number)) { return -1; }
 	g.update(coords, ' ', 0);
 	g.update(temp, letter, number);
 
 	coords = std::move(temp);
+	return 0;
 }
 
-void Block::down(int val) {
+int Block::down(int val) {
 	std::vector<Coord> temp;
 	for (auto i : coords) {
 		temp.push_back({ i.x, i.y + val });
 	}
-	if (!g.check(temp, number)) { return; }
+	if (!g.check(temp, number)) { return -1; }
 	g.update(coords, ' ', 0);
 	g.update(temp, letter, number);
 
 	coords = std::move(temp);
+	return 0;
 }
 
-void Block::right() {
+int Block::right() {
 	std::vector<Coord> temp;
 	for (auto i : coords) {
 		temp.push_back({ i.x + 1, i.y });
 	}
-	if (!g.check(temp, number)) { return; }
+	if (!g.check(temp, number)) { return 0; }
 	g.update(coords, ' ', 0);
 	g.update(temp, letter, number);
 
 	coords = std::move(temp);
+	return 0;
 }
 
-void Block::left() {
+int Block::left() {
 	std::vector<Coord> temp;
 	for (auto i : coords) {
 		temp.push_back({ i.x - 1, i.y });
 	}
-	if (!g.check(temp, number)) { return; }
+	if (!g.check(temp, number)) { return 0; }
 	g.update(coords, ' ', 0);
 	g.update(temp, letter, number);
 
 	coords = std::move(temp);
+	return 0;
 }
 
 int Block::maxDrop(Coord current) {

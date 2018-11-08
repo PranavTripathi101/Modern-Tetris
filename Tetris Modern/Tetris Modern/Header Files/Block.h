@@ -6,16 +6,10 @@
 class Block {
 public:
 
-	enum class Movement {
-		Down,
-		Left,
-		Right
-	};
-	void move(Movement m);
-	void down();
-	void left();
+	int down();
+	int left();
 	int maxDrop(Coord current);
-	void right();
+	int right();
 	void drop(); // Drops the block to bottom
 	virtual void rotate(); // Rotates the block clockwise
 	virtual ~Block();
@@ -28,6 +22,6 @@ protected:
 	char letter;
 
 private:
-	void down(int val);
+	int down(int val);
 
 };
