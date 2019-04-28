@@ -6,7 +6,7 @@ Grid::Grid(int height, int width) : height{ height }, width{ width } {
 	view = std::vector<std::vector<BlockCoord>>(height, std::vector<BlockCoord>(width, { ' ', 0 }));
 	score = 0;
 }
-
+// Git test
 bool Grid::check(const std::vector<Coord> &coords, const unsigned int blockNum) const {
 	for (const Coord &i : coords) {
 		if (i.x < 0 || i.y < 0) { return false; }
