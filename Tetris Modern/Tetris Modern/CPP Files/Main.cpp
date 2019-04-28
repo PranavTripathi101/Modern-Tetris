@@ -7,7 +7,7 @@
 #include "../Header Files/OBlock.h"
 namespace Solution {
 
-	constexpr static int width = 10;
+	constexpr static int width = 20;
 	constexpr static int height = 15;
 }
 
@@ -50,6 +50,9 @@ int main() {
 			count++;
 			block = getNextBlock(count, g);
 
+		}
+		else if (input == "quit") {
+			break;
 		}
 
 		g.print();

@@ -32,14 +32,14 @@ int Grid::getLowestOpenSlot(int row, int column, int number){
 }
 
 void Grid::print() const {
-	std::cout << "-------------------\n";
+	std::cout << "--------------------\n";
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
 			std::cout << view[i][j].val;
 		}
 		std::cout << std::endl;
 	}
-	std::cout << "-------------------\n";
+	std::cout << "--------------------\n";
 	std::cout << "Score: " << score << std::endl;
-	std::cout << "-------------------\n";
+	std::cout << "--------------------\n";
 }
